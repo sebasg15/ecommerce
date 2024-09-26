@@ -2,7 +2,7 @@ import {Products} from '../interface/Products';
 
 export const getProducts = async (): Promise<Products[]> => {
 	try {
-		const response = await fetch(`db.json`);
+		const response = await fetch('/db.json');
 
 		if (response.ok) {
 			const data = await response.json();
@@ -17,7 +17,7 @@ export const getProducts = async (): Promise<Products[]> => {
 
 export const createProduct = async (product: Products): Promise<Products> => {
 	try {
-		const response = await fetch('/db.json', {
+		const response = await fetch('https://www.amiiboapi.com/api/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
