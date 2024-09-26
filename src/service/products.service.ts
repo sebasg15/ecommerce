@@ -17,7 +17,7 @@ export const getProducts = async (): Promise<Products[]> => {
 
 export const createProduct = async (product: Products): Promise<Products> => {
 	try {
-		const response = await fetch('http://localhost:3001/products', {
+		const response = await fetch('/db.json', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
